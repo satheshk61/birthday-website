@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cake Cutting Ceremony</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    .glow-text-container {
+      position: relative;
+    }
+    .glow-text-container::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f97b06",
+            "background-light": "#f8f7f5",
+            "background-dark": "#23190f",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl w-full space-y-8 text-center">
+<!-- Video Background -->
+<div class="fixed inset-0 w-full h-full -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-black/80"></div>
+  <video 
+    class="absolute inset-0 w-full h-full object-contain md:object-cover transform scale-105"
+    autoplay 
+    loop 
+    muted 
+    playsinline
+    src="src/video/Generated File September 15, 2025 - 10_17PM.mp4"
+  ></video>
+  <!-- Enhanced layered overlays for better visibility -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/70"></div>
+  <div class="absolute inset-0 backdrop-blur-[3px]"></div>
+</div>
+
+<!-- Featured Video Section -->
+<div class="mb-12 relative overflow-hidden rounded-2xl shadow-2xl">
+  <div class="aspect-[9/16] md:aspect-[16/9] relative">
+    <video 
+      class="absolute inset-0 w-full h-full object-contain bg-black/90 rounded-2xl"
+      controls
+      preload="metadata"
+      src="src/video/VN20250916_152246.mp4"
+    ></video>
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/60 to-transparent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Content Section with Enhanced Visibility -->
+<div class="relative z-10 w-full space-y-8 text-center bg-gradient-to-b from-black/70 to-black/50 p-8 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl">
+  <div class="space-y-6">
+    <div class="glow-text-container">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
+        Cake Cutting Ceremony
+      </h2>
+    </div>
+    <p class="max-w-xl mx-auto text-xl text-white font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] leading-relaxed">
+      "Dear Meera paapa, seeing you smile today while cutting your cake filled my heart with so much joy. May your days always be as sweet and bright as this moment. Love you forever!"
+    </p>
+</div>
+</main>
+</div>
+<footer class="w-full py-6 bg-primary text-white text-center text-sm font-medium shadow-inner mt-auto">
+    &copy; 2024 Melophile. All rights reserved.
+</footer>
+
+</body></html>
