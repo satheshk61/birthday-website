@@ -46,31 +46,29 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex flex-col min-h-screen">
-<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-<div class="max-w-3xl w-full space-y-8 text-center">
-<!-- Responsive Video Background -->
+  <main class="flex-grow flex flex-col items-center justify-center py-6 px-2 sm:px-6 lg:px-8">
+    <div class="w-full max-w-3xl space-y-8 text-center mx-auto">
+<!-- Video Background -->
 <div class="fixed inset-0 w-full h-full -z-10 overflow-hidden">
   <div class="absolute inset-0 bg-black/80"></div>
   <video 
-    class="absolute inset-0 w-full h-full object-cover sm:object-cover md:object-cover lg:object-cover xl:object-cover"
+    class="absolute inset-0 w-full h-full object-contain sm:object-cover transform scale-105"
     autoplay 
     loop 
     muted 
     playsinline
     src="src/video/Generated File September 15, 2025 - 10_17PM.mp4"
-    style="min-width:100vw; min-height:100vh;"
   ></video>
-</div>
   <!-- Enhanced layered overlays for better visibility -->
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/70"></div>
   <div class="absolute inset-0 backdrop-blur-[3px]"></div>
 </div>
 
 <!-- Featured Video Section -->
-<div class="mb-12 relative overflow-hidden rounded-2xl shadow-2xl">
-  <div class="aspect-[9/16] md:aspect-[16/9] relative">
+<div class="mb-8 sm:mb-12 relative overflow-hidden rounded-2xl shadow-2xl w-full">
+  <div class="aspect-[9/16] sm:aspect-[16/9] relative w-full">
     <video 
-      class="absolute inset-0 w-full h-full object-contain bg-black/90 rounded-2xl"
+      class="absolute inset-0 w-full h-full object-contain sm:object-cover bg-black/90 rounded-2xl"
       controls
       preload="metadata"
       src="src/video/VN20250916_152246.mp4"
@@ -83,22 +81,21 @@
 </div>
 
 <!-- Content Section with Enhanced Visibility -->
-<div class="relative z-10 w-full space-y-8 text-center bg-gradient-to-b from-black/70 to-black/50 p-8 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl">
+<div class="relative z-10 w-full space-y-8 text-center bg-gradient-to-b from-black/70 to-black/50 p-4 sm:p-8 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl">
   <div class="space-y-6">
     <div class="glow-text-container">
-      <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
         Cake Cutting Ceremony
       </h2>
     </div>
-    <p class="max-w-xl mx-auto text-xl text-white font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] leading-relaxed">
+    <p class="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-white font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] leading-relaxed">
       "Dear Meera paapa, seeing you smile today while cutting your cake filled my heart with so much joy. May your days always be as sweet and bright as this moment. Love you forever!"
     </p>
-</div>
+  </div>
 </main>
 </div>
 <footer class="w-full py-6 bg-primary text-white text-center text-sm font-medium shadow-inner mt-auto">
     &copy; 2024 Melophile. All rights reserved.
 </footer>
-
 
 </body></html>
