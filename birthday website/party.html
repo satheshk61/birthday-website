@@ -48,17 +48,19 @@
 <div class="flex flex-col min-h-screen">
 <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 <div class="max-w-3xl w-full space-y-8 text-center">
-<!-- Video Background -->
+<!-- Responsive Video Background -->
 <div class="fixed inset-0 w-full h-full -z-10 overflow-hidden">
   <div class="absolute inset-0 bg-black/80"></div>
   <video 
-    class="absolute inset-0 w-full h-full object-contain md:object-cover transform scale-105"
+    class="absolute inset-0 w-full h-full object-cover sm:object-cover md:object-cover lg:object-cover xl:object-cover"
     autoplay 
     loop 
     muted 
     playsinline
     src="src/video/Generated File September 15, 2025 - 10_17PM.mp4"
+    style="min-width:100vw; min-height:100vh;"
   ></video>
+</div>
   <!-- Enhanced layered overlays for better visibility -->
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/70"></div>
   <div class="absolute inset-0 backdrop-blur-[3px]"></div>
@@ -97,5 +99,6 @@
 <footer class="w-full py-6 bg-primary text-white text-center text-sm font-medium shadow-inner mt-auto">
     &copy; 2024 Melophile. All rights reserved.
 </footer>
+
 
 </body></html>
