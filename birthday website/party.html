@@ -69,11 +69,11 @@
 </div>
 
 <!-- Featured Video Section -->
-<div class="mb-8 sm:mb-12 relative overflow-hidden rounded-2xl shadow-2xl w-full">
+<div id="videoSection" class="mb-8 sm:mb-12 relative overflow-hidden rounded-2xl shadow-2xl w-full">
   <div class="aspect-[9/16] sm:aspect-[16/9] relative w-full">
     <video 
+      id="mainVideo"
       class="absolute inset-0 w-full h-full object-contain sm:object-cover bg-black/90 rounded-2xl"
-      controls
       preload="metadata"
       src="src/video/VN20250916_152246.mp4"
     ></video>
@@ -81,11 +81,18 @@
       <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
       <div class="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black/60 to-transparent"></div>
     </div>
+    <button 
+      id="playButton" 
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-3 rounded-full font-bold hover:bg-primary/80 transition-all"
+      onclick="playVideo()"
+    >
+      <span class="material-symbols-outlined align-middle mr-2">play_arrow</span> Play Video
+    </button>
   </div>
 </div>
 
 <!-- Content Section with Enhanced Visibility -->
-<div class="relative z-10 w-full space-y-8 text-center bg-gradient-to-b from-black/70 to-black/50 p-4 sm:p-8 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl">
+<div id="messageSection" class="hidden relative z-10 w-full space-y-8 text-center bg-gradient-to-b from-black/70 to-black/50 p-4 sm:p-8 rounded-xl backdrop-blur-md border border-white/20 shadow-2xl">
   <div class="space-y-6">
     <div class="glow-text-container">
       <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]">
@@ -97,8 +104,32 @@
       and healed me with your words and actions.I swear that your hardwork and dedication will take you to great heights in your career and life. Keep shining bright and never forget that you are loved and appreciated by so many people around you.On this special day I promise you that I will stay connected to you beyond restrictions and whatever the situation is,and I will protect you as my eyes and keep away from the difficulties,So much to share with you,I just a call away whatever the situation is,Finally Happy birthday once again, Doctor paapa!"
     </p>
   </div>
-</main>
 </div>
+
+<script>
+  // Prevent back button
+  history.pushState(null, null, location.href);
+  window.onpopstate = function () {
+    history.go(1);
+  };
+
+  function playVideo() {
+    const video = document.getElementById('mainVideo');
+    const button = document.getElementById('playButton');
+    const messageSection = document.getElementById('messageSection');
+
+    video.controls = true;
+    button.style.display = 'none';
+    video.play();
+
+    video.addEventListener('ended', function() {
+      messageSection.classList.remove('hidden');
+      messageSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+</script>
+</main>
+</div></p>
 <footer class="w-full py-6 bg-primary text-white text-center text-sm font-medium shadow-inner mt-auto">
     &copy; 2025 Made with love by Melophile
 </footer>
