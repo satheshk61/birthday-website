@@ -13,16 +13,17 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Custom CSS for the sliding photo effect */
+    /* Update the photo-slide-container styles */
     .photo-slide-container {
       position: relative;
       width: 90vw;
-      max-width: 400px; /* Adjust max-width for the photo card */
-      height: 300px; /* Fixed height for the photo card */
+      max-width: 400px;
+      height: 500px; /* Increased height for better photo display */
+      margin-top: 2rem; /* Add top margin */
       margin-bottom: 2rem;
       cursor: grab;
-      touch-action: pan-x; /* Allow horizontal swiping */
-      z-index: 10; /* Ensure it's above other elements */
+      touch-action: pan-x;
+      z-index: 10;
     }
 
     .photo-card {
@@ -41,15 +42,12 @@
       transition: transform 0.3s ease-out;
     }
 
-    .photo-card.slid-away {
-      transform: translateX(-150%); /* Slide completely off-screen to the left */
-    }
-
     .photo-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Changed from cover to contain */
       border-radius: 1.5rem;
+      padding: 0.5rem; /* Add some padding around the image */
     }
 
     .slide-hint {
@@ -193,22 +191,26 @@
     function touchEnd() {
       if (!isDragging) return;
       isDragging = false;
-      photoCard.style.transition = 'transform 0.3s ease-out'; // Re-enable transition
+      photoCard.style.transition = 'transform 0.3s ease-out';
 
-      if (currentTranslate < -50) { // If dragged more than 50px to the left
+      // Reduce the threshold from -50 to -30 pixels
+      if (currentTranslate < -30) { // If dragged more than 30px to the left
         photoCard.classList.add('slid-away');
-        // Once slid away, reveal the birthday message and button
+        
+        // Show content immediately without waiting for transition
+        mainBirthdayCard.classList.remove('hidden-content');
+        mainBirthdayCard.classList.add('visible-content');
+        celebrateButtonContainer.classList.remove('hidden-content');
+        celebrateButtonContainer.classList.add('visible-content');
+        
+        // Hide photo container after animation
         photoCard.addEventListener('transitionend', () => {
-          photoSlideContainer.style.display = 'none'; // Hide the container after animation
-          mainBirthdayCard.classList.remove('hidden-content');
-          mainBirthdayCard.classList.add('visible-content');
-          celebrateButtonContainer.classList.remove('hidden-content');
-          celebrateButtonContainer.classList.add('visible-content');
+          photoSlideContainer.style.display = 'none';
         }, { once: true });
       } else {
         setTranslate(0); // Snap back if not dragged enough
       }
-      currentTranslate = 0; // Reset for next drag
+      currentTranslate = 0;
     }
 
     // Mouse events for desktop
