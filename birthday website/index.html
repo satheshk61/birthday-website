@@ -326,24 +326,23 @@
     </div>
 
     <!-- Enhanced birthday message -->
-    <div id="mainBirthdayCard" class="backdrop-enhanced p-4 sm:p-6 rounded-3xl shadow-2xl 
-               relative overflow-hidden w-[90vw] max-w-xl mx-auto border border-white/60
-               hidden-content mt-4 sm:mt-8"> 
-      <h1 class="text-gray-800 text-3xl sm:text-5xl font-black tracking-tighter 
-                 text-center drop-shadow-xl bounce-in-title">
+     <!-- Main card -->
+    <div class="bg-white/70 backdrop-blur-sm p-4 sm:p-6 rounded-3xl shadow-lg mt-4 sm:mt-8 
+                animate-fadeInUp relative overflow-hidden w-[90vw] max-w-xl mx-auto bg-white/90 backdrop-blur-xl border border-white/60">
+
+      <!-- Heading -->
+      <h1 class="text-gray-800 text-3xl sm:text-5xl font-poppins font-black tracking-tighter 
+                 animate-bounceIn delay-200 text-center drop-shadow-xl">
         Happy Birthday, 
-        <span class="animated-title block sm:inline mt-2 sm:mt-0">Meera!</span>
+        <span class="text-[var(--primary-color)] animate-gradientText">Meera!</span>
       </h1>
 
-      <p class="text-gray-600 text-base sm:text-lg mt-4 max-w-md mx-auto text-center 
-               slide-in-subtitle font-medium">
-        Get ready to party! 🎉
-      </p>
-      
-      <p class="text-gray-500 text-sm sm:text-base mt-2 max-w-md mx-auto text-center fade-in-text">
-        We've got a whole day of fun, laughter, and awesome surprises lined up just for you.
+      <!-- Paragraph -->
+      <p class="text-gray-600 text-base sm:text-lg mt-4 max-w-md mx-auto animate-fadeIn delay-500 text-center">
+  Get ready to party! We've got a whole day of fun, laughter, and awesome surprises lined up just for you.
       </p>
     </div>
+
 
     <!-- Enhanced celebrate button -->
     <div id="celebrateButtonContainer" class="mt-6 sm:mt-8 flex justify-center hidden-content"> 
@@ -518,3 +517,4 @@
   </script>
 </body>
 </html>
+
